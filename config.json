@@ -4,7 +4,7 @@
     },
     "app": {
         "apiPrefix" : "",
-        "url": "https://d87d-2401-4900-6322-8449-d8ae-9de-3a41-5820.ngrok-free.app"
+        "url": "https://0abf96e3-584c-4641-a7e9-7cc1be297d35-dev.e1-eu-north-azure.choreoapis.dev/caitripsybotsdkservice/tripsy-bot/v1.0"
     },
     "validations": {
         "leastNodeVersion": 10
