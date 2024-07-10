@@ -4,7 +4,7 @@
     },
     "app": {
         "apiPrefix" : "",
-        "url": "https://0abf96e3-584c-4641-a7e9-7cc1be297d35-dev.e1-eu-north-azure.choreoapis.dev/caitripsybotsdkservice/tripsy-bot/v1.0"
+        "url": ""
     },
     "validations": {
         "leastNodeVersion": 10
