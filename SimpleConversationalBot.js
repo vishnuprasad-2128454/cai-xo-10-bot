@@ -1,5 +1,5 @@
-var botId = "st-7c42d5bd-081b-59b1-8106-b5fbb4b4f77a";
-var botName = "Tripsy";
+var botId = "st-0035ce3b-3a64-595a-b124-7bfddcc4dcbf";
+var botName = "CAI Canada Bot";
 var sdk = require("./lib/sdk");
 
 /*
