@@ -70,7 +70,7 @@
     "wordwrap": "^0.0.3"
   },
   "scripts": {
-    "start": "npm install -g npm@10.8.1 && node app.js",
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
