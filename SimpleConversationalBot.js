@@ -1,5 +1,5 @@
-var botId = "st-7c42d5bd-081b-59b1-8106-b5fbb4b4f77a";
-var botName = "Tripsy";
+var botId = "st-dd42b999-8ea0-58fd-9099-94b50b90f6f5";
+var botName = "Gidean";
 var sdk = require("./lib/sdk");
 
 /*
