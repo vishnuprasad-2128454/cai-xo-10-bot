@@ -4,14 +4,14 @@
     },
     "app": {
         "apiPrefix" : "",
-        "url": "https://0abf96e3-584c-4641-a7e9-7cc1be297d35-dev.e1-eu-north-azure.choreoapis.dev/caitripsybotsdkservice/tripsy-bot/v1.0"
+        "url": "https://cai-tripsy-bot.onrender.com"
     },
     "validations": {
         "leastNodeVersion": 10
     },
     "credentials": {
-        "apikey": "y8LPeDxg0na8JJ5WVYxmqU4bCWwaXkFcQEp9kY81Avo=",
-        "appId": "cs-8f1f87e5-7b55-5249-86db-f0df775bda5e"
+        "apikey": "7qInhI1WI/wfFd4U3aaeZX1Up2uhcUyOHsrAOz39QI8=",
+        "appId": "cs-04634b98-5af3-526d-8854-767ea7c7aa42"
     },
     "jwt": {
         "jwtAlgorithm": "HS256",
