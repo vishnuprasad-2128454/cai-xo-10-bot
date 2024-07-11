@@ -7,6 +7,7 @@ var sdk         = require("./lib/sdk");
 // var server = new Server(config, app);
 
 const express = require('express');
+const bodyParser = require("body-parser");
 const APIKeyMiddleware = require("./lib/app/middlewares/APIKeyMiddleware");
 const app = express()
 const port = 8003;
