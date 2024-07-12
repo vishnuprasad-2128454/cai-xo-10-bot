@@ -10,8 +10,8 @@
         "leastNodeVersion": 10
     },
     "credentials": {
-        "apikey": "7qInhI1WI/wfFd4U3aaeZX1Up2uhcUyOHsrAOz39QI8=",
-        "appId": "cs-04634b98-5af3-526d-8854-767ea7c7aa42"
+        "apikey": "QgtBjvs4BURAmGCbYOBpg4ksj3vuEMQkY4tCI4UPpwk=",
+        "appId": "cs-27f811c4-e1fd-5718-b46e-7d0cefeb7265"
     },
     "jwt": {
         "jwtAlgorithm": "HS256",
