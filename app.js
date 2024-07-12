@@ -1,20 +1,19 @@
-var Application = require("./lib/app");
-var Server      = require("./lib/server");
-var sdk         = require("./lib/sdk");
-var config      = require("./config");
+const sdk = require("./lib/sdk");
+const express = require('express');
+const bodyparser = require('body-parser');
+const APIKeyMiddleware = require("./lib/app/middlewares/APIKeyMiddleware");
+const app = express();
+const port = "8003";
 
-var app    = new Application(null, config);
-var server = new Server(config, app);
+app.use(bodyparser());
+const apikeyMW = APIKeyMiddleware({});
+app.use('/sdk/', apikeyMW);
 
 sdk.checkNodeVersion();
 
-server.start();
+app.listen(port , function(){
+    const host = "localhost";
+    console.info('app listening at http://%s:%s', host, port);
+});
 
-// sdk.registerBot(require('./FindAFlight.js'));
 sdk.registerBot(require('./SimpleConversationalBot.js'));
-// sdk.registerBot(require('./SimpleConversationalBotWithMultipleBotId.js'));
-// sdk.registerBot(require('./GuessTheNumber.js'));
-// sdk.registerBot(require('./BookACab.js'));
-// sdk.registerBot(require('./OrderAPizza.js'));
-// sdk.registerBot(require('./BotVariables.js'));
-// sdk.registerBot(require('./LiveChat.js'));
