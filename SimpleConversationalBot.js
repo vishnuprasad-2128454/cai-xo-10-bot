@@ -36,15 +36,17 @@ module.exports = {
         //Sends back the message to user
         //console.log("bot message",data.message)
         //console.log("Custom Payload ===> ", data.context.session.BotUserSession);
-        return new Promise(function(resolve, reject) {
+        const custRes = new Promise(function(resolve, reject) {
             sdk.sendUserMessage(data, callback).then(function(res) {
-                console.log("Bot Custom Payload ===> ", res);
                 resolve(res);
             })
             .catch(function(err){
                 return reject(err);
             })
         });
+
+        console.log("Bot Custom Payload ===> ", custRes);
+        return custRes;
     },
     on_agent_transfer : function(requestId, data, callback){
         return callback(null, data);
