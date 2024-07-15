@@ -35,7 +35,7 @@ module.exports = {
         }
         //Sends back the message to user
         //console.log("bot message",data.message)
-        console.log("Custom Payload ===> ", data);
+        console.log("Custom Payload ===> ", data.context.session.BotUserSession);
         return sdk.sendUserMessage(data, callback);
     },
     on_agent_transfer : function(requestId, data, callback){
