@@ -14,10 +14,10 @@ module.exports = {
     botName : botName,
 
     on_user_message : function(requestId, data, callback) {
-        console.log("Data ===> ", data.context.session.BotUserSession.lastMessage)
+        //console.log("Data ===> ", data.context.session.BotUserSession.lastMessage)
         if (data.message === "Hi") {
             data.message = "Hello";
-            console.log("user message",data.message);
+            //console.log("user message",data.message);
             //Sends back 'Hello' to user.
             return sdk.sendUserMessage(data, callback);
         } else if(!data.agent_transfer){
@@ -35,8 +35,10 @@ module.exports = {
         }
         //Sends back the message to user
         //console.log("bot message",data.message)
-        console.log("Custom Payload ===> ", data.context.session.BotUserSession);
-        return sdk.sendUserMessage(data, callback);
+        //console.log("Custom Payload ===> ", data.context.session.BotUserSession);
+        const result = sdk.sendUserMessage(data, callback);
+        console.log("Custom Payload ===> ", result);
+        return result;
     },
     on_agent_transfer : function(requestId, data, callback){
         return callback(null, data);
