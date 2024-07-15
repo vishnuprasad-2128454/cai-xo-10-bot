@@ -14,7 +14,7 @@ module.exports = {
     botName : botName,
 
     on_user_message : function(requestId, data, callback) {
-        console.log("Context ===> ", data.context)
+        console.log("Data ===> ", data)
         if (data.message === "Hi") {
             data.message = "Hello";
             console.log("user message",data.message);
