@@ -28,7 +28,7 @@ module.exports = {
             return sdk.sendUserMessage(data, callback);
         }
     },
-    on_bot_message  : function(requestId, data, callback) {
+    on_bot_message  : async function(requestId, data, callback) {
         if (data.message === 'hi') {
             data.message = 'The Bot says hello!';
             console.log("bot message",data)
@@ -36,15 +36,16 @@ module.exports = {
         //Sends back the message to user
         //console.log("bot message",data.message)
         //console.log("Custom Payload ===> ", data.context.session.BotUserSession);
-        const custRes = new Promise(function(resolve, reject) {
-            sdk.sendUserMessage(data, callback).then(function(res) {
-                resolve(res);
-            })
-            .catch(function(err){
-                return reject(err);
-            })
-        });
+        // const custRes = new Promise(function(resolve, reject) {
+        //     sdk.sendUserMessage(data, callback).then(function(res) {
+        //         resolve(res);
+        //     })
+        //     .catch(function(err){
+        //         return reject(err);
+        //     })
+        // });
 
+        const custRes = await sdk.sendUserMessage(data, callback);
         console.log("Bot Custom Payload ===> ", custRes);
         return custRes;
     },
