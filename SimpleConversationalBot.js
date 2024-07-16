@@ -45,12 +45,12 @@ module.exports = {
         //     })
         // });
         
-        // data = {
-        //     ...data,
-        //    "message":"Spell-corrected message sent by the assistant to the user",
-        // }
+        var mod_data = {
+            ...data,
+           "msg":"Spell-corrected message sent by the assistant to the user",
+        }
 
-        return sdk.sendUserMessage(data, callback);
+        return sdk.sendUserMessage(mod_data, callback);
         // sdk.getSavedData(requestId)
         //     .then(() => {
         //         const payload = {
