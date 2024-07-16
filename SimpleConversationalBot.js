@@ -44,15 +44,13 @@ module.exports = {
         //         return reject(err);
         //     })
         // });
-        var context = data.context
+        
         data = {
+            ...data,
            "message":"Spell-corrected message sent by the assistant to the user",
-           "originalMessage":"Original message sent by the assistant to the user",
-           "channel":"bumbble_bee_web_hook",
-           "context": context
         }
 
-        sdk.sendUserMessage(data, callback);
+        return sdk.sendUserMessage(data, callback);
         // sdk.getSavedData(requestId)
         //     .then(() => {
         //         const payload = {
