@@ -45,19 +45,39 @@ module.exports = {
         //     })
         // });
         
-        var mod_data = {
-            ...data,
-           "message":"Spell-corrected message sent by the assistant to the user",
-            "context": {
-                ...data.context,
-                "custom": "Test Variable"
-            }
-        }
-        console.log("Modified data ===> ", mod_data.context.session.BotUserSession);
-        console.log("Modified data ===> ", mod_data.context.session);
-        console.log("Modified data ===> ", mod_data.context.session.BotUserSession.channels);
-        console.log("Stringified data ===> ", JSON.stringify(mod_data));
-        return sdk.sendUserMessage(mod_data, callback);
+        // var mod_data = {
+        //     ...data,
+        //    "message":"Spell-corrected message sent by the assistant to the user",
+        //     "context": {
+        //         ...data.context,
+        //         "custom": "Test Variable"
+        //     }
+        // }
+        // console.log("Modified data ===> ", mod_data.context.session.BotUserSession);
+        // console.log("Modified data ===> ", mod_data.context.session);
+        // console.log("Modified data ===> ", mod_data.context.session.BotUserSession.channels);
+        // console.log("Stringified data ===> ", JSON.stringify(mod_data));
+
+        var overrideMessagePayload = {};
+        overrideMessagePayload = {
+                body: "{\"text\":\"Response1\"}",
+                isTemplate: true
+        };
+        data.overrideMessagePayload = overrideMessagePayload;
+        console.log("Stringified data ===> ", JSON.stringify(data));
+
+        return (sdk.sendUserMessage(data, callback)
+                .then(function () {
+                    // //data.message = "Response 2";
+                    // overrideMessagePayload = {
+                    //     body: "{\"text\":\"Response2\"}",
+                    //     isTemplate: true
+                    // };
+                    // data.overrideMessagePayload = overrideMessagePayload;
+                    return sdk.sendUserMessage(data, callback);
+                })
+               );
+        
         // sdk.getSavedData(requestId)
         //     .then(() => {
         //         const payload = {
