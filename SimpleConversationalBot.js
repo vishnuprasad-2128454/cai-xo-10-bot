@@ -70,9 +70,7 @@ module.exports = {
                 .then(function () {
                     //data.message = "Response 2";
                     overrideMessagePayload = {
-                        body: {
-                            abc: "test123"
-                        },
+                        body: "{\"text\":\"Response2\"}",
                         isTemplate: true
                     };
                     data.overrideMessagePayload = overrideMessagePayload;
