@@ -46,7 +46,7 @@ module.exports = {
         // });
 
         const custRes = await sdk.sendUserMessage(data, callback);
-        //console.log("Bot Custom Payload ===> ", custRes);
+        console.log("Context ===> ", data.context);
         return custRes;
     },
     on_agent_transfer : function(requestId, data, callback){
