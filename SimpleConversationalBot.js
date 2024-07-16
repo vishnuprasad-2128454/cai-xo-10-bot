@@ -68,12 +68,14 @@ module.exports = {
 
         return (sdk.sendUserMessage(data, callback)
                 .then(function () {
-                    // //data.message = "Response 2";
-                    // overrideMessagePayload = {
-                    //     body: "{\"text\":\"Response2\"}",
-                    //     isTemplate: true
-                    // };
-                    // data.overrideMessagePayload = overrideMessagePayload;
+                    //data.message = "Response 2";
+                    overrideMessagePayload = {
+                        body: {
+                            abc: "test123"
+                        },
+                        isTemplate: true
+                    };
+                    data.overrideMessagePayload = overrideMessagePayload;
                     return sdk.sendUserMessage(data, callback);
                 })
                );
