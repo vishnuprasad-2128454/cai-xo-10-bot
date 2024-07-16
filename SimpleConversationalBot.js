@@ -51,6 +51,8 @@ module.exports = {
         }
         console.log("Modified data ===> ", mod_data.context.session.BotUserSession);
         console.log("Modified data ===> ", mod_data.context.session);
+        console.log("Modified data ===> ", mod_data.context.session.BotUserSession.channels);
+        console.log("Stringified data ===> ", JSON.stringify(mod_data));
         return sdk.sendUserMessage(mod_data, callback);
         // sdk.getSavedData(requestId)
         //     .then(() => {
