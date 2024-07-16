@@ -47,7 +47,7 @@ module.exports = {
         
         var mod_data = {
             ...data,
-           "msg":"Spell-corrected message sent by the assistant to the user",
+           "message":"Spell-corrected message sent by the assistant to the user",
         }
         console.log("Modified data ===> ", mod_data.context.session.BotUserSession);
         console.log("Modified data ===> ", mod_data.context.session);
