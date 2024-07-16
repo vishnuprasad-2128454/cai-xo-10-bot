@@ -45,7 +45,8 @@ module.exports = {
         //     })
         // });
 
-        sdk.sendUserMessage(data, callback)
+        sdk.sendUserMessage(data, callback);
+        sdk.getSavedData(requestId)
             .then(() => {
                 const payload = {
                    "taskId":"Dialog task ID",
@@ -55,7 +56,7 @@ module.exports = {
                 }
                 payload.context.successful = false;
                 console.log("Context ===> ", data.context);
-                return sdk.respondToHook(payload);;
+                return sdk.respondToHook(payload);
             });
     },
     on_agent_transfer : function(requestId, data, callback){
