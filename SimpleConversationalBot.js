@@ -48,6 +48,10 @@ module.exports = {
         var mod_data = {
             ...data,
            "message":"Spell-corrected message sent by the assistant to the user",
+            "context": {
+                ...data.context,
+                "custom": "Test Variable"
+            }
         }
         console.log("Modified data ===> ", mod_data.context.session.BotUserSession);
         console.log("Modified data ===> ", mod_data.context.session);
