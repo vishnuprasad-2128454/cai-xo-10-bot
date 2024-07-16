@@ -45,9 +45,18 @@ module.exports = {
         //     })
         // });
 
-        const custRes = await sdk.sendUserMessage(data, callback);
-        console.log("Context ===> ", data.context);
-        return custRes;
+        sdk.sendUserMessage(data, callback)
+            .then(() => {
+                const payload = {
+                   "taskId":"Dialog task ID",
+                   "nodeId":"Current node ID in the dialog flow",
+                   "channel":"Channel name",
+                   "context": true
+                }
+                payload.context.successful = false;
+                console.log("Context ===> ", data.context);
+                return sdk.respondToHook(payload);;
+            });
     },
     on_agent_transfer : function(requestId, data, callback){
         return callback(null, data);
