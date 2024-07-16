@@ -44,20 +44,27 @@ module.exports = {
         //         return reject(err);
         //     })
         // });
+        var context = data.context
+        data = {
+           "message":"Spell-corrected message sent by the assistant to the user",
+           "originalMessage":"Original message sent by the assistant to the user",
+           "channel":"bumbble_bee_web_hook",
+           "context": context
+        }
 
         sdk.sendUserMessage(data, callback);
-        sdk.getSavedData(requestId)
-            .then(() => {
-                const payload = {
-                   "taskId":"Dialog task ID",
-                   "nodeId":"Current node ID in the dialog flow",
-                   "channel":"Channel name",
-                   "context": true
-                }
-                payload.context.successful = false;
-                console.log("Context ===> ", data.context);
-                return sdk.respondToHook(payload);
-            });
+        // sdk.getSavedData(requestId)
+        //     .then(() => {
+        //         const payload = {
+        //            "taskId":"Dialog task ID",
+        //            "nodeId":"Current node ID in the dialog flow",
+        //            "channel":"Channel name",
+        //            "context": true
+        //         }
+        //         payload.context.successful = false;
+        //         console.log("Context ===> ", data.context);
+        //         return sdk.respondToHook(payload);
+        //     });
     },
     on_agent_transfer : function(requestId, data, callback){
         return callback(null, data);
