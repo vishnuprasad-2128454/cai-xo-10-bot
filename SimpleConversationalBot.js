@@ -49,7 +49,7 @@ module.exports = {
             ...data,
            "msg":"Spell-corrected message sent by the assistant to the user",
         }
-        console.log("Modified data ===> ", mod_data);
+        console.log("Modified data ===> ", mod_data.context.session.BotUserSession.lastMessage);
         return sdk.sendUserMessage(mod_data, callback);
         // sdk.getSavedData(requestId)
         //     .then(() => {
