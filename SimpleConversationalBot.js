@@ -45,10 +45,10 @@ module.exports = {
         //     })
         // });
         
-        data = {
-            ...data,
-           "message":"Spell-corrected message sent by the assistant to the user",
-        }
+        // data = {
+        //     ...data,
+        //    "message":"Spell-corrected message sent by the assistant to the user",
+        // }
 
         return sdk.sendUserMessage(data, callback);
         // sdk.getSavedData(requestId)
