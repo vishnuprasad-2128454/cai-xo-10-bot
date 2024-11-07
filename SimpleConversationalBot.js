@@ -44,15 +44,17 @@ module.exports = {
         return callback(null, data);
     },
     on_event : function (requestId, data, callback) {
-        console.log("on_event --->  Event : ", data.event);
-        if(data.event.type === 'endDialog'){
+        
+            console.log("on_event --->  Event : ", data.event);
             console.log('test message')
+        
             let logArray = data.context.session.BotUserSession.logArray;
             console.log('on_event ---> logArray:', logArray);
+        
             let sessionContext = data.context.session.BotUserSession; 
             var logArray1 = sessionContext.get('logArray'); 
+        
             console.log('on_event ---> logArray1:', logArray1);
-        }
         
         return callback(null, data);
     },
