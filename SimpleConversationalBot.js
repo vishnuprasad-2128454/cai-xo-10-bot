@@ -33,6 +33,8 @@ module.exports = {
             data.message = 'The Bot says hello!';
         }
         console.log("bot message",JSON.stringify(data))
+        console.log("bot reqId",JSON.stringify(requestId))
+        console.log("bot callback",JSON.stringify(callback))
         //Sends back the message to user
         //console.log("bot message",data.message)
         //console.log("Custom Payload ===> ", data.context.session.BotUserSession);
@@ -58,25 +60,25 @@ module.exports = {
         // console.log("Modified data ===> ", mod_data.context.session.BotUserSession.channels);
         // console.log("Stringified data ===> ", JSON.stringify(mod_data));
 
-        var overrideMessagePayload = {};
-        overrideMessagePayload = {
-                body: "{\"text\":\"Response1\"}",
-                isTemplate: true
-        };
-        data.overrideMessagePayload = overrideMessagePayload;
-        console.log("Stringified data ===> ", JSON.stringify(data));
+        // var overrideMessagePayload = {};
+        // overrideMessagePayload = {
+        //         body: "{\"text\":\"Response1\"}",
+        //         isTemplate: true
+        // };
+        // data.overrideMessagePayload = overrideMessagePayload;
+        // console.log("Stringified data ===> ", JSON.stringify(data));
 
         return (sdk.sendUserMessage(data, callback)
-                .then(function () {
-                    //data.message = "Response 2";
-                    overrideMessagePayload = {
-                        body: "{\"text\":\"Response2\"}",
-                        isTemplate: true
-                    };
-                    data.overrideMessagePayload = overrideMessagePayload;
-                    return sdk.sendUserMessage(data, callback);
-                })
-               );
+               //  .then(function () {
+               //      //data.message = "Response 2";
+               //      overrideMessagePayload = {
+               //          body: "{\"text\":\"Response2\"}",
+               //          isTemplate: true
+               //      };
+               //      data.overrideMessagePayload = overrideMessagePayload;
+               //      return sdk.sendUserMessage(data, callback);
+               //  })
+               // );
         
         // sdk.getSavedData(requestId)
         //     .then(() => {
