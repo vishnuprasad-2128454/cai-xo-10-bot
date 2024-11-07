@@ -34,7 +34,7 @@ module.exports = {
         }
             
             let logArray = data.context.session.BotUserSession.logArray
-            console.log('on_bot_message ---> BotUserSession: ', context.session.BotUserSession);
+            console.log('on_bot_message ---> BotUserSession: ', data.context.session.BotUserSession);
             console.log('on_bot_message ---> logArray: ', logArray);
         
             //Sends back the message to user
