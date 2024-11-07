@@ -31,8 +31,8 @@ module.exports = {
         on_bot_message  : function(requestId, data, callback) {
         if (data.message === 'hello') {
             data.message = 'The Bot says hello!';
-            console.log('on_bot_message ---> event type', !data?.event ? 'not found': data?.event)
         }
+            console.log('on_bot_message ---> event type', !data?.event ? 'not found': data?.event)
             
             // console.log('on_bot_message ---> BotUserSession: ', data.context.session.BotUserSession);
             console.log('on_bot_message ---> logArray: ', data.context.session.BotUserSession.logArray);
