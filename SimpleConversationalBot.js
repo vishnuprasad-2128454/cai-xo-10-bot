@@ -1,5 +1,5 @@
-var botId = "st-969e6350-0439-5958-a697-d239ec90c45b";
-var botName = "Bumbble Bee";
+var botId = "st-f57ed987-5d13-5dd7-9c68-9c1cca120965";
+var botName = "Order Management";
 var sdk = require("./lib/sdk");
 
 /*
