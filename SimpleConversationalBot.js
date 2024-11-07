@@ -34,6 +34,7 @@ module.exports = {
         }
             
             let logArray = data.context.session.BotUserSession.logArray
+            console.log('on_bot_message ---> BotUserSession: ', context.session.BotUserSession);
             console.log('on_bot_message ---> logArray: ', logArray);
         
             //Sends back the message to user
@@ -50,7 +51,7 @@ module.exports = {
         
             console.log("on_event --->  Event : ", data.event);
             console.log('test message')
-        
+            data.event.eventType === 'endDialog' ? console.log(data.context.session.BotUserSession):console.log('condition false')
             let logArray = data.context.session.BotUserSession.logArray;
             console.log('on_event ---> logArray:', logArray);
         
