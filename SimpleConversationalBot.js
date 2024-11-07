@@ -31,8 +31,8 @@ module.exports = {
     on_bot_message  : async function(requestId, data, callback) {
         if (data.message === 'hi') {
             data.message = 'The Bot says hello!';
-            console.log("bot message",JSON.stringify(data))
         }
+        console.log("bot message",JSON.stringify(data))
         //Sends back the message to user
         //console.log("bot message",data.message)
         //console.log("Custom Payload ===> ", data.context.session.BotUserSession);
