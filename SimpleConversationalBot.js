@@ -28,70 +28,17 @@ module.exports = {
             return sdk.sendUserMessage(data, callback);
         }
     },
-    on_bot_message  : async function(requestId, data, callback) {
-        if (data.message === 'hi') {
+        on_bot_message  : function(requestId, data, callback) {
+        if (data.message === 'hello') {
             data.message = 'The Bot says hello!';
         }
+        //Sends back the message to user
+        
+        return sdk.sendUserMessage(data, callback);
+            
         console.log("bot message",JSON.stringify(data))
         console.log("bot reqId",JSON.stringify(requestId))
         console.log("bot callback",JSON.stringify(callback))
-        //Sends back the message to user
-        //console.log("bot message",data.message)
-        //console.log("Custom Payload ===> ", data.context.session.BotUserSession);
-        // const custRes = new Promise(function(resolve, reject) {
-        //     sdk.sendUserMessage(data, callback).then(function(res) {
-        //         resolve(res);
-        //     })
-        //     .catch(function(err){
-        //         return reject(err);
-        //     })
-        // });
-        
-        // var mod_data = {
-        //     ...data,
-        //    "message":"Spell-corrected message sent by the assistant to the user",
-        //     "context": {
-        //         ...data.context,
-        //         "custom": "Test Variable"
-        //     }
-        // }
-        // console.log("Modified data ===> ", mod_data.context.session.BotUserSession);
-        // console.log("Modified data ===> ", mod_data.context.session);
-        // console.log("Modified data ===> ", mod_data.context.session.BotUserSession.channels);
-        // console.log("Stringified data ===> ", JSON.stringify(mod_data));
-
-        // var overrideMessagePayload = {};
-        // overrideMessagePayload = {
-        //         body: "{\"text\":\"Response1\"}",
-        //         isTemplate: true
-        // };
-        // data.overrideMessagePayload = overrideMessagePayload;
-        // console.log("Stringified data ===> ", JSON.stringify(data));
-
-        return (sdk.sendUserMessage(data, callback)
-               //  .then(function () {
-               //      //data.message = "Response 2";
-               //      overrideMessagePayload = {
-               //          body: "{\"text\":\"Response2\"}",
-               //          isTemplate: true
-               //      };
-               //      data.overrideMessagePayload = overrideMessagePayload;
-               //      return sdk.sendUserMessage(data, callback);
-               //  })
-               // );
-        
-        // sdk.getSavedData(requestId)
-        //     .then(() => {
-        //         const payload = {
-        //            "taskId":"Dialog task ID",
-        //            "nodeId":"Current node ID in the dialog flow",
-        //            "channel":"Channel name",
-        //            "context": true
-        //         }
-        //         payload.context.successful = false;
-        //         console.log("Context ===> ", data.context);
-        //         return sdk.respondToHook(payload);
-        //     });
     },
     on_agent_transfer : function(requestId, data, callback){
         return callback(null, data);
