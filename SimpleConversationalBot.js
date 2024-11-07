@@ -32,10 +32,10 @@ module.exports = {
         if (data.message === 'hello') {
             data.message = 'The Bot says hello!';
         }
-        //Sends back the message to user
-
-            console.log("on_bot_message --> Data :",JSON.stringify(data))
-            console.log("on_bot_message -->reqId :",JSON.stringify(requestId))
+        
+            //Sends back the message to user
+            // console.log("on_bot_message --> Data :",JSON.stringify(data))
+            // console.log("on_bot_message -->reqId :",JSON.stringify(requestId))
         
         return sdk.sendUserMessage(data, callback);
             
