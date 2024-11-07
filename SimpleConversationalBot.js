@@ -58,11 +58,6 @@ module.exports = {
             let logArray = data.context.session.BotUserSession.logArray;
             console.log('on_event ---> logArray:', logArray);
         
-            let sessionContext = data.context.session.BotUserSession; 
-            var logArray1 = sessionContext.get('logArray'); 
-        
-            console.log('on_event ---> logArray1:', logArray1);
-        
         return callback(null, data);
     },
     on_alert : function (requestId, data, callback) {
