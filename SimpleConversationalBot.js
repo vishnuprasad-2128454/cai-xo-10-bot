@@ -33,12 +33,13 @@ module.exports = {
             data.message = 'The Bot says hello!';
         }
         //Sends back the message to user
+
+            console.log("bot message",JSON.stringify(data))
+            console.log("bot reqId",JSON.stringify(requestId))
+            console.log("bot callback",JSON.stringify(callback))
         
         return sdk.sendUserMessage(data, callback);
             
-        console.log("bot message",JSON.stringify(data))
-        console.log("bot reqId",JSON.stringify(requestId))
-        console.log("bot callback",JSON.stringify(callback))
     },
     on_agent_transfer : function(requestId, data, callback){
         return callback(null, data);
