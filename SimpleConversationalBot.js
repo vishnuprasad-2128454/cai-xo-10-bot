@@ -45,7 +45,8 @@ module.exports = {
     },
     on_event : function (requestId, data, callback) {
         console.log("on_event --->  Event : ", data.event);
-        if(data.event.type === 'dialog_end'){
+        if(data.event.type === 'endDialog'){
+            console.log('test message')
             let logArray = data.context.session.BotUserSession.logArray;
             console.log('on_event ---> logArray:', logArray);
             let sessionContext = data.context.session.BotUserSession; 
