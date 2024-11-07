@@ -31,11 +31,11 @@ module.exports = {
         on_bot_message  : function(requestId, data, callback) {
         if (data.message === 'hello') {
             data.message = 'The Bot says hello!';
+            console.log('on_bot_message ---> event type', !data?.event ? 'not found': data?.event)
         }
             
-            let logArray = data.context.session.BotUserSession.logArray
-            console.log('on_bot_message ---> BotUserSession: ', data.context.session.BotUserSession);
-            console.log('on_bot_message ---> logArray: ', logArray);
+            // console.log('on_bot_message ---> BotUserSession: ', data.context.session.BotUserSession);
+            console.log('on_bot_message ---> logArray: ', data.context.session.BotUserSession.logArray);
         
             //Sends back the message to user
             // console.log("on_bot_message --> Data :",JSON.stringify(data))
@@ -49,16 +49,19 @@ module.exports = {
     },
     on_event : function (requestId, data, callback) {
         
-            console.log("on_event --->  Event : ", data.event);
-            console.log('test message')
-            data.event.eventType === 'endDialog' ? console.log(data.context.session.BotUserSession):console.log('condition false')
-            let logArray = data.context.session.BotUserSession.logArray;
-            console.log('on_event ---> logArray:', logArray);
-        
-        return callback(null, data);
+            // console.log("on_event --->  Event : ", data.event);
+            // console.log('test message')
+            // data.event.eventType === 'endDialog' ? console.log(data.context.session.BotUserSession):console.log('condition false')
+        if(data.event.eventType === "endDialog"){
+            console.log('on_event ---> logArray:', data.context.session.BotUserSession.logArray);
+            return callback(null, data);
+        } else{
+            console.log('on_event ---> event type:', data.event.eventType);
+            return callback(null, data);
+        }        
     },
     on_alert : function (requestId, data, callback) {
-        console.log("on_alert -->  : ", data, data.message);
+        // console.log("on_alert -->  : ", data, data.message);
         return sdk.sendAlertMessage(data, callback);
     }
 
