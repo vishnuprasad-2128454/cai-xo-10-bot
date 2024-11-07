@@ -32,6 +32,13 @@ module.exports = {
         if (data.message === 'hello') {
             data.message = 'The Bot says hello!';
         }
+            
+            let logArray = data.context.session.BotUserSession.logArray
+            console.log('on_bot_message ---> logArray: ', logArray);
+            
+            let sessionContext = data.context.session.BotUserSession; 
+            let logArray1 = sessionContext.get('logArray'); 
+            console.log('on_bot_message ---> logArray1: ', logArray1);
         
             //Sends back the message to user
             // console.log("on_bot_message --> Data :",JSON.stringify(data))
