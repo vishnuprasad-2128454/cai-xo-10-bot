@@ -34,9 +34,8 @@ module.exports = {
         }
         //Sends back the message to user
 
-            console.log("bot message",JSON.stringify(data))
-            console.log("bot reqId",JSON.stringify(requestId))
-            console.log("bot callback",JSON.stringify(callback))
+            console.log("on_bot_message --> Data :",JSON.stringify(data))
+            console.log("on_bot_message -->reqId :",JSON.stringify(requestId))
         
         return sdk.sendUserMessage(data, callback);
             
@@ -45,7 +44,15 @@ module.exports = {
         return callback(null, data);
     },
     on_event : function (requestId, data, callback) {
-        console.log("on_event -->  Event : ", data.event);
+        console.log("on_event --->  Event : ", data.event);
+        if(data.event.type === 'dialog_end'){
+            let logArray = data.context.session.BotUserSession.logArray;
+            console.log('on_event ---> logArray:', logArray);
+            let sessionContext = data.context.session.BotUserSession; 
+            var logArray1 = sessionContext.get('logArray'); 
+            console.log('on_event ---> logArray1:', logArray1);
+        }
+        
         return callback(null, data);
     },
     on_alert : function (requestId, data, callback) {
