@@ -4,7 +4,7 @@
     },
     "app": {
         "apiPrefix" : "",
-        "url": "https://cai-tripsy-bot.onrender.com"
+        "url": "https://cai-xo-10-bot-pjbo.onrender.com"
     },
     "validations": {
         "leastNodeVersion": 10
